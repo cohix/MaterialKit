@@ -352,7 +352,7 @@ public class BasicCardView : MaterialCardView, Comparable, Equatable {
 			titleLabelContainer!.removeConstraints(titleLabelContainer!.constraints())
 
 			// container
-			layoutConstraints += Layout.constraint("H:|[titleLabelContainer]|", options: nil, metrics: nil, views: ["titleLabelContainer": detailLabelContainer!])
+			layoutConstraints += Layout.constraint("H:|[titleLabelContainer]|", options: nil, metrics: nil, views: ["titleLabelContainer": titleLabelContainer!])
 			verticalFormat += "[titleLabelContainer]"
 			views["titleLabelContainer"] = titleLabelContainer!
 
