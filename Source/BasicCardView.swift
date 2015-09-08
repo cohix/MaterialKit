@@ -164,6 +164,11 @@ public class BasicCardView : MaterialCardView, Comparable, Equatable {
 	}
 
 	/**
+		:name:	maximumTitleLabelHeight
+	*/
+	public var maximumTitleLabelHeight: CGFloat = 288
+
+	/**
 		:name:	titleLabel
 	*/
 	public var titleLabel: UILabel? {
@@ -184,7 +189,7 @@ public class BasicCardView : MaterialCardView, Comparable, Equatable {
 				t.backgroundColor = MaterialTheme.clear.color
 				t.font = Roboto.medium
 				t.numberOfLines = 0
-				t.lineBreakMode = .ByWordWrapping
+				t.lineBreakMode = .ByTruncatingTail
 				prepareCard()
 			} else {
 				titleLabelContainer?.removeFromSuperview()
@@ -195,7 +200,7 @@ public class BasicCardView : MaterialCardView, Comparable, Equatable {
 	/**
 		:name:	maximumDetailLabelHeight
 	*/
-	public var maximumDetailLabelHeight: CGFloat = 1000
+	public var maximumDetailLabelHeight: CGFloat = 1008
 
 	/**
 		:name:	detailLabelContainer
@@ -358,7 +363,7 @@ public class BasicCardView : MaterialCardView, Comparable, Equatable {
 
 			// text
 			Layout.expandToParentHorizontallyWithPad(titleLabelContainer!, child: titleLabel!, left: titleLabelLeftInset, right: titleLabelRightInset)
-			titleLabelContainer!.addConstraints(Layout.constraint("V:|-(titleLabelTopInset)-[titleLabel(<=maximumDetailLabelHeight)]-(titleLabelBottomInset)-|", options: nil, metrics: ["titleLabelTopInset": titleLabelTopInset, "titleLabelBottomInset": titleLabelBottomInset, "maximumDetailLabelHeight": maximumDetailLabelHeight], views: ["titleLabel": titleLabel!]))
+			titleLabelContainer!.addConstraints(Layout.constraint("V:|-(titleLabelTopInset)-[titleLabel(<=maximumTitleLabelHeight)]-(titleLabelBottomInset)-|", options: nil, metrics: ["titleLabelTopInset": titleLabelTopInset, "titleLabelBottomInset": titleLabelBottomInset, "maximumTitleLabelHeight": maximumTitleLabelHeight], views: ["titleLabel": titleLabel!]))
 		}
 
 		// detail
