@@ -195,7 +195,7 @@ public class BasicCardView : MaterialCardView, Comparable, Equatable {
 	/**
 		:name:	maximumDetailLabelHeight
 	*/
-	public var maximumDetailLabelHeight: CGFloat = 144
+	public var maximumDetailLabelHeight: CGFloat = 1000
 
 	/**
 		:name:	detailLabelContainer
